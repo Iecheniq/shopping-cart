@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+  app:
+    image: golang:1.11.2 
+    volumes:
+      - .:/go/src/cart
+    working_dir: /go/src/cart
+    command: go run main.go
