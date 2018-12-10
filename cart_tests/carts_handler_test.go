@@ -5,7 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/iecheniq/go_bootcamp/cart/cartutils"
+	"github.com/iecheniq/cart/cartutils"
 )
 
 func TestCartsHandler(t *testing.T) {

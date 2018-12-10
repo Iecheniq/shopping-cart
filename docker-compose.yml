@@ -4,6 +4,7 @@ services:
   app:
     image: golang:1.11.2 
     volumes:
-      - .:/go/src/cart
-    working_dir: /go/src/cart
+      - C:\Users\ismael.echenique\go\src\github.com:/go/src/github.com
+    working_dir: /go/src/github.com/iecheniq/cart
     command: go run main.go
+    
