@@ -18,7 +18,7 @@ func TestCartsHandler(t *testing.T) {
 	}
 	db := cartutils.CartDB{
 		Driver:     "mysql",
-		DataSource: "root:root$@tcp(shopping_cart:3306)/shopping_cart_test",
+		DataSource: "root:root@tcp(shopping_cart:3306)/shopping_cart_test",
 	}
 	if err := db.OpenCartDB(); err != nil {
 		t.Fatalf(err.Error())

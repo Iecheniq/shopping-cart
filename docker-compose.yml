@@ -4,8 +4,8 @@ services:
   app:
     image: golang:1.11.2 
     volumes:
-      - C:\Users\ismael.echenique\go\src\github.com:/go/src/github.com
-    working_dir: /go/src/github.com/iecheniq/cart
+      - .:/go/src/cart
+    working_dir: /go/src/cart
     command: go run main.go
     links:
       - shopping_cart
@@ -20,7 +20,7 @@ services:
       - ./mysql/data/dev:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=shooping_cart
+      - MYSQL_DATABASE=shopping_cart
       - MYSQL_USER=root
       - MYSQL_PASSWORD=root
     networks: 
