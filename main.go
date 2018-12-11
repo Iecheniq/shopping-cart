@@ -4,17 +4,17 @@ import (
 	"log"
 	"net/http"
 
-	mux "github.com/gorilla/mux"
-	"github.com/iecheniq/cart/cartutils"
+	"cartutils"
 
 	_ "github.com/go-sql-driver/mysql"
+	mux "github.com/gorilla/mux"
 )
 
 func main() {
 
 	db := cartutils.CartDB{
 		Driver:     "mysql",
-		DataSource: "iecheniq:HoUsE22$@tcp(localhost:3306)/shopping_cart",
+		DataSource: "root:root$@tcp(shopping_cart:3306)/shopping_cart",
 	}
 
 	if err := db.OpenCartDB(); err != nil {

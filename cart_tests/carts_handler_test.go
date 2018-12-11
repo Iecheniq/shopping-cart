@@ -5,7 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/iecheniq/cart/cartutils"
+	"cartutils"
 )
 
 func TestCartsHandler(t *testing.T) {
@@ -18,7 +18,7 @@ func TestCartsHandler(t *testing.T) {
 	}
 	db := cartutils.CartDB{
 		Driver:     "mysql",
-		DataSource: "iecheniq:HoUsE22$@tcp(localhost:3306)/shopping_cart_test",
+		DataSource: "root:root$@tcp(shopping_cart:3306)/shopping_cart_test",
 	}
 	if err := db.OpenCartDB(); err != nil {
 		t.Fatalf(err.Error())

@@ -7,4 +7,33 @@ services:
       - C:\Users\ismael.echenique\go\src\github.com:/go/src/github.com
     working_dir: /go/src/github.com/iecheniq/cart
     command: go run main.go
+    links:
+      - shopping_cart
+    depends_on:
+      - shopping_cart
+    ports:
+      - 8080:8080
+
+  shopping_cart:
+    image: mysql:5.7
+    volumes: 
+      - ./mysql/data/dev:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=shooping_cart
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+    networks: 
+      - default
+    ports: 
+      - 3306:3306
+    
+      
+    
+    
+
+
+
+
+  
     
